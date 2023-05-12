@@ -33,26 +33,15 @@ Cinema.prototype.totalRunningTime = (films) => {
   return totalRunTime
 }
 Cinema.prototype.atLeastOneFilmFromYear = (films, specYear) => {
-  const years = films.map((film) => {
-    return film.year
-    
+  return films.some((film) => {
+    return film.year === year
   })
-  const min = years.filter((year) => {
-    return year >= specYear
-  })
-  if (min.length === years.length){
-    return true
-  }
 }
 
 Cinema.prototype.minLength = (films, num) => {
-  const lengths = films.map((film) => {
-    return film.length
+  return films.every((film) => {
+    return film.length >= length
   })
-  if (lengths.forEach === -1){
-    return false
-  }
-  return true
 }
 
 
