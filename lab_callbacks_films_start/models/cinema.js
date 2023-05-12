@@ -32,14 +32,27 @@ Cinema.prototype.totalRunningTime = (films) => {
   })
   return totalRunTime
 }
-Cinema.prototype.atLeastOneFilmFromYear = (films) => {
-  const lengths = films.map((film) => {
+Cinema.prototype.atLeastOneFilmFromYear = (films, specYear) => {
+  const years = films.map((film) => {
     return film.year
+    
   })
-    const doesYearExist = year.some(() => {
-    return accumulator += number
+  const min = years.filter((year) => {
+    return year >= specYear
   })
-  return totalRunTime
+  if (min.length === years.length){
+    return true
+  }
+}
+
+Cinema.prototype.minLength = (films, num) => {
+  const lengths = films.map((film) => {
+    return film.length
+  })
+  if (lengths.forEach === -1){
+    return false
+  }
+  return true
 }
 
 

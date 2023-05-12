@@ -60,11 +60,20 @@ describe('Cinema', function () {
 
 //Example 5
   it('should be able to confirm *at least one* film is from a specified year - true case - 1/2' , function (){
-      const actual = cinema.atLeastOneFilmFromYear(2017)
+      const actual = cinema.atLeastOneFilmFromYear(films, 2017)
       const expected = true
       assert.strictEqual(actual, expected)
   });
-  it('should be able to confirm *none of* the films are from a specified year - false case - 2/2');
-  it('should be able to confirm whether *all* films are *at least* a specified length (true / false)');
- 
-});
+
+    it('should be able to confirm *at least one* film is from a specified year - false case - 2/2' , function (){
+      const actual = cinema.atLeastOneFilmFromYear(films, 1993)
+      const expected = false
+      assert.strictEqual(actual, expected)
+  });
+
+  it('should be able to confirm whether *all* films are *at least* a specified length (true / false)', function (){
+      const actual = cinema.minLength(films, 30)
+      const expected = true
+      assert.strictEqual(actual, expected)
+  });
+})
